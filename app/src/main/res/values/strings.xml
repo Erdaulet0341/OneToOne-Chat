@@ -27,7 +27,7 @@
     <string name="cloud_fail">Your data don\'t added to cloud Firestore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="your_chats">Your chats</string>
+    <string name="your_chats">OneToOne Chat</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
     <string name="your_profile">Your profile</string>
@@ -46,5 +46,11 @@
     <string name="calls2">Calls</string>
     <string name="loaging">Loaging ...</string>
     <string name="offline">offline</string>
+    <string name="somothing_wrong">Something wrong!</string>
+    <string name="status2">Status</string>
+    <string name="profile1">Profile</string>
+    <string name="settings1">Settings</string>
+    <string name="online">Online</string>
+    <string name="offline2">Offline</string>
 
 </resources>

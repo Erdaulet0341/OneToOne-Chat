@@ -14,9 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -212,7 +210,7 @@ public class UpdateProfile extends AppCompatActivity {
             userProfileImage.setImageURI(imgPath);
         }
         else{
-            Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.somothing_wrong), Toast.LENGTH_SHORT).show();
 
         }
 

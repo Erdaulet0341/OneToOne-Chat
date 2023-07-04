@@ -180,7 +180,7 @@ public class SetProfile extends AppCompatActivity {
             imgUserImage.setImageURI(uriImgPath);
         }
         else{
-            Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.somothing_wrong), Toast.LENGTH_SHORT).show();
 
         }
 

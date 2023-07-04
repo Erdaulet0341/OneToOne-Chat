@@ -2,6 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="toolbar_color">#075e54</color>
+    <color name="text_color">#fff</color>
+    <color name="bg_color">#fff</color>
+    <color name="input_bg">#fff</color>
     <color name="black2">#1E1D1D</color>
     <color name="grey">#6E6E6E</color>
     <color name="dark_green">#25D366</color>
@@ -13,7 +17,5 @@
     <color name="chat_bg">#ECE5DD</color>
     <color name="sender">#DCF8C6</color>
     <color name="link_color">#61A1EA</color>
-    <style name="TabItemStyle" parent="Widget.Design.TabLayout">
-        <item name="android:textSize">16sp</item> <!-- Change the text size here -->
-    </style>
+
 </resources>

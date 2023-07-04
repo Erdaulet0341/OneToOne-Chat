@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.OneToOneChat" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Base.Theme.OneToOneChat" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">@color/toolbar_green</item>
+        <item name="colorPrimary">@color/toolbar_color</item>
+    </style>
+
+    <style name="icon_3" parent="Widget.Design.TabLayout">
+        <item name="android:src">@drawable/dark_icon</item>
     </style>
 </resources>

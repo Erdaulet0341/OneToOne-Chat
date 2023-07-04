@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
-        android:background="@color/toolbar_green"
+        android:background="@color/toolbar_color"
         android:id="@+id/toolbarOne">
 
         <RelativeLayout
@@ -23,7 +23,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/backFragmentChatOne"
-                app:tint="@color/white"
+                app:tint="@color/text_color"
                 android:background="@android:color/transparent"
                 android:src="@drawable/baseline_arrow_back_24"
                 android:layout_centerVertical="true"/>
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:id="@+id/nameOfUserOne"/>
 
         </RelativeLayout>
@@ -110,8 +110,15 @@
             android:background="@android:color/transparent"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            app:tint="@color/white" />
+            app:tint="@color/black" />
 
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progressChatOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
 
 </RelativeLayout>

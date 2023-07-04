@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_color"
     tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/icon_"
+        style="@style/icon_3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:id="@+id/logo"/>
@@ -41,6 +41,10 @@
         android:layout_height="50dp"
         android:layout_above="@id/centerVertical"
         android:layout_centerInParent="true"
+        app:ccp_arrowColor="@color/black2"
+        app:ccp_contentColor="@color/black2"
+        app:ccp_flagBorderColor="@color/black2"
+        app:ccpDialog_textColor="@color/black2"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="10dp"

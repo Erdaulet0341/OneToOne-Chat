@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_color"
     tools:context=".AutentificationOTP">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/icon_"
         android:layout_centerHorizontal="true"
+        style="@style/icon_3"
         android:layout_marginTop="40dp"
         android:id="@+id/logo"/>
 

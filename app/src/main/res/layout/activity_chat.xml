@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_color"
     tools:context=".ChatActivity">
     
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
-        android:background="@color/toolbar_green"
+        android:background="@color/toolbar_color"
         android:id="@+id/toolbar">
 
         <RelativeLayout
@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/your_chats"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -38,9 +38,9 @@
          android:id="@+id/tabLayout"
          android:layout_below="@id/toolbar"
          app:tabTextColor="@color/tab_text_color"
-         app:tabSelectedTextColor="@color/white"
+         app:tabSelectedTextColor="@color/text_color"
          app:tabIndicatorColor="@color/white"
-         android:backgroundTint="@color/toolbar_green"
+         android:backgroundTint="@color/toolbar_color"
          app:tabIndicatorHeight="3dp"
          app:tabIndicatorFullWidth="true"
          android:layout_marginTop="0dp">

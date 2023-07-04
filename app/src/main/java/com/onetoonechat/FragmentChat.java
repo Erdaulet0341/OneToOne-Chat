@@ -2,9 +2,7 @@ package com.onetoonechat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,12 +54,14 @@ public class FragmentChat extends Fragment {
 
                 Picasso.get().load(uri).into(imgUser);
                 if(model.getStatus().equals("Online")){
-                    holder.status.setText(model.getStatus());
-                    holder.status.setTextColor(Color.GREEN);
+                    holder.status.setText(getString(R.string.online));
+                    int color = ContextCompat.getColor(getContext(), R.color.tab_text_color);
+                    holder.status.setTextColor(color);
                 }
                 else{
-                    holder.status.setTextColor(R.color.grey);
-                    holder.status.setText(model.getStatus());
+                    int color = ContextCompat.getColor(getContext(), R.color.grey);
+                    holder.status.setTextColor(color);
+                    holder.status.setText(getString(R.string.offline2));
                 }
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +70,6 @@ public class FragmentChat extends Fragment {
                         Intent intent = new Intent(getContext(), OneToOneChat.class);
                         intent.putExtra("username", model.getName());
                         intent.putExtra("useruid", model.getUid());
-                        Log.d("uidFragment", model.getUid());
                         intent.putExtra("imageUser", model.getImage());
                         startActivity(intent);
 

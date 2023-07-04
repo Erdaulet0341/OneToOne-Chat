@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_color"
     tools:context=".UpdateProfile">
 
 
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
-        android:background="@color/toolbar_green"
+        android:background="@color/toolbar_color"
         android:id="@+id/toolbarUpdate">
 
         <RelativeLayout
@@ -24,7 +24,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/backUpdate"
-                app:tint="@color/white"
+                app:tint="@color/text_color"
                 android:background="@android:color/transparent"
                 android:src="@drawable/baseline_arrow_back_24"
                 android:layout_centerVertical="true"/>
@@ -39,7 +39,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:id="@+id/toolbarText"/>
 
         </RelativeLayout>
@@ -81,7 +81,7 @@
         android:layout_marginTop="35dp"
         android:background="@color/dark_green"
         android:text="@string/update_profile"
-        android:textColor="@color/white"/>
+        android:textColor="@color/text_color"/>
 
     <ProgressBar
         android:layout_width="wrap_content"

@@ -5,19 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
+//import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,12 +22,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -45,6 +38,7 @@ public class OneToOneChat extends AppCompatActivity {
     ImageView imgChat;
     TextView usernameChat;
     ImageButton back;
+    ProgressBar progressBar;
 
     private String enteredMessage;
     Intent intent;
@@ -70,6 +64,7 @@ public class OneToOneChat extends AppCompatActivity {
 
         message = findViewById(R.id.getUserMessageOne);
         sendMessage = findViewById(R.id.sendMessageBtn);
+        progressBar = findViewById(R.id.progressChatOne);
         sendCard = findViewById(R.id.cardViewOne);
         toolbar = findViewById(R.id.toolbarOne);
         imgChat = findViewById(R.id.userImageOne);
@@ -89,7 +84,7 @@ public class OneToOneChat extends AppCompatActivity {
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -102,23 +97,21 @@ public class OneToOneChat extends AppCompatActivity {
         uidSender = firebaseAuth.getUid();
         uidReceiver = getIntent().getStringExtra("useruid");
         nameReceiver = getIntent().getStringExtra("username");
-        Log.d("receiver", uidReceiver);
-        Log.d("sender", uidSender);
         senderRoom = uidSender + uidReceiver;
         receiverRoom = uidReceiver + uidSender;
 
+        progressBar.setVisibility(View.VISIBLE);
         DatabaseReference databaseReference = firebaseDatabase.getReference().child("chats").child(senderRoom).child("messages");
         messagesAdapter = new MessagesAdapter(OneToOneChat.this, oneMessageArrayList);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("sezee1", String.valueOf(oneMessageArrayList.size()));
                 oneMessageArrayList.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     OneMessage oneMessage = dataSnapshot.getValue(OneMessage.class);
                     oneMessageArrayList.add(oneMessage);
                 }
-                Log.d("sezee2", String.valueOf(oneMessageArrayList.size()));
+                progressBar.setVisibility(View.INVISIBLE);
                 messagesAdapter.notifyDataSetChanged();
                 recyclerView.scrollToPosition(oneMessageArrayList.size() - 1);
             }
@@ -147,6 +140,7 @@ public class OneToOneChat extends AppCompatActivity {
             public void onClick(View view) {
                 enteredMessage = message.getText().toString();
                 if(!enteredMessage.isEmpty()){
+                    enteredMessage = enteredMessage.replaceAll("\\s+$", "");
                     currentTime = simpleDateFormat.format(calendar.getTime());
                     Date date = new Date();
                     OneMessage oneMessage = new OneMessage(enteredMessage, firebaseAuth.getUid(), date.getTime(), currentTime);
@@ -179,6 +173,7 @@ public class OneToOneChat extends AppCompatActivity {
                 }
             }
         });
+
 
     }
 
