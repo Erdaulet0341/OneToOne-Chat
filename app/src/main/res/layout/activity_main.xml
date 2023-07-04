@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icon_"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/chat_app_will_send_opt_to_your_entered_number"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:padding="20dp"
+        android:textColor="@color/grey"
+        android:layout_below="@id/logo"
+        android:id="@+id/text_numder_enter"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/centerVertical">
+
+    </RelativeLayout>
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/countrycodepicker"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/centerVertical"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        app:ccp_areaCodeDetectedCountry="true"
+        app:ccp_autoDetectCountry="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/inputPhoneNumber"
+        android:hint="@string/enter_your_phone_number_here"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/centerVertical"/>
+    
+    <android.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/inputPhoneNumber"
+        android:id="@+id/sendOPTBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:paddingLeft="40dp"
+        android:text="@string/sent_opt"
+        android:textSize="15sp"
+        android:paddingRight="40dp"
+        android:background="@color/dark_green"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/sendOPTBtn"
+        android:id="@+id/progresOPT"
+        android:visibility="invisible"
+        android:layout_marginTop="30dp"/>
+
+
+
+
+</RelativeLayout>

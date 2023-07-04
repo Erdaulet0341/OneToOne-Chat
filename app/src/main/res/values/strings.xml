@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">OneToOne Chat</string>
+    <string name="chat_app_will_send_opt_to_your_entered_number">Chat app will send code to your entered number</string>
+    <string name="enter_your_phone_number_here">Enter your phone number here</string>
+    <string name="sent_opt">Sent code</string>
+    <string name="enter_the_otp_you_received">Enter the code which you received</string>
+    <string name="enter_otp_here">Enter code here...</string>
+    <string name="verify_otp">Verify code</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="chats">CHATS</string>
+    <string name="status">STATUS</string>
+    <string name="calls">CALLS</string>
+    <string name="please_enter_number">Please enter phone number!</string>
+    <string name="enter_correct_phone_number">Please enter correct phone number!</string>
+    <string name="otp_sent">Code sended for your phone number</string>
+    <string name="please_enter_code">Please enter code!</string>
+    <string name="enter_name">Please enter your name!</string>
+    <string name="login_succ">Login successful</string>
+    <string name="login_failed">Login failed, check code code and phone number </string>
+    <string name="enter_image">Please enter your profile image!</string>
+    <string name="profile_saved">Profile saved successfully</string>
+    <string name="uri_succ">URI get successful</string>
+    <string name="image_failed">Image not uploaded</string>
+    <string name="uri_fail">URI get failed</string>
+    <string name="image_succ">Image uploaded</string>
+    <string name="cloud_succ">Your data successfully added to cloud Firestore</string>
+    <string name="cloud_fail">Your data don\'t added to cloud Firestore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_chats">Your chats</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="your_profile">Your profile</string>
+    <string name="update_your_profile">Update your profile</string>
+    <string name="name_is_empty">Name is empty!</string>
+    <string name="updating_saved">Updating saved</string>
+    <string name="name_of_user">Name of user</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="sending_message_here">Sending message here</string>
+    <string name="didn_t_get_change_your_number">Didn\'t get ? Change your number</string>
+    <string name="do_you_want_update_your_profile">Do you want update your profile?</string>
+    <string name="save_your_profile">Save your profile</string>
+    <string name="save">SAVE</string>
+    <string name="enter_new_name_here">Enter new name here</string>
+    <string name="update_profile">Update profile</string>
+    <string name="calls2">Calls</string>
+    <string name="loaging">Loaging ...</string>
+    <string name="offline">offline</string>
+
+</resources>

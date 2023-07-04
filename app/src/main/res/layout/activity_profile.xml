@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Profile">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="0dp"
+        android:background="@color/toolbar_green"
+        android:id="@+id/toolbarFragmentChat">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/backFragmentChat"
+                app:tint="@color/white"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:layout_centerVertical="true"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_profile"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/backFragmentChat"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:id="@+id/toolbarText"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/usernameFragment"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="80dp"
+        android:id="@+id/userImageFragmentCard"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="120dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_account_box_24"
+            android:id="@+id/userImageFragment"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/logoProfileFragment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@id/usernameFragment"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="-60dp"
+        android:src="@drawable/baseline_person_24"
+        app:tint="@color/person_tint" />
+
+
+    <EditText
+        android:id="@+id/usernameFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:clickable="false"
+        android:editable="false"
+        android:hint="@string/enter_your_name"
+        android:inputType="none" />
+
+    <TextView
+        android:id="@+id/goUpdateProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameFragment"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:padding="15dp"
+        android:text="@string/do_you_want_update_your_profile"
+        android:textColor="@color/link_color" />
+
+    <ProgressBar
+        android:id="@+id/progressProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>
