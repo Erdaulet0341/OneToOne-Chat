@@ -3,7 +3,10 @@ package com.onetoonechat;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +20,7 @@ import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.hbb20.CountryCodePicker;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.activity_main);
 
         phoneNumberInput = findViewById(R.id.inputPhoneNumber);
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         countryCode = countryCodePicker.getSelectedCountryCodeWithPlus();
+
+        boolean isInternetAvailable = NetworkUtils.isNetworkAvailable(this);
+        checkInternet(isInternetAvailable);
 
         countryCodePicker.setOnCountryChangeListener(new CountryCodePicker.OnCountryChangeListener() {
             @Override
@@ -100,6 +108,21 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
+    void setLocale(String lan){
+        Locale locale = new Locale(lan);
+        Configuration configuration = new Configuration();
+        Locale.setDefault(locale);
+        configuration.setLocale(locale);
+        getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("Language_set", MODE_PRIVATE).edit();
+        editor.putString("app_language", lan).apply();
+    }
+
+    void loadLocale(){
+        SharedPreferences pre = getSharedPreferences("Language_set", Activity.MODE_PRIVATE);
+        setLocale(pre.getString("app_language", Locale.getDefault().getLanguage()));
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -108,5 +131,9 @@ public class MainActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
+    }
+
+    private void checkInternet(boolean isInternetAvailable) {
+        if(!isInternetAvailable)  Toast.makeText(this, getString(R.string.check_interne), Toast.LENGTH_SHORT).show();
     }
 }

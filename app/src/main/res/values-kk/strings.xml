@@ -8,7 +8,7 @@
     <string name="enter_otp_here">Кодты осы жерге енгізіңіз...</string>
     <string name="verify_otp">Кодты растау</string>
     <string name="enter_your_name">Атыңызды енгізіңіз</string>
-    <string name="chats">ХАБАРЛАМАЛАР</string>
+    <string name="chats">ХАТТАР</string>
     <string name="status">СТАТУСТАР</string>
     <string name="calls">ҚОҢЫРАУЛАР</string>
     <string name="please_enter_number">Телефон нөмірін енгізіңіз!</string>
@@ -49,7 +49,15 @@
     <string name="somothing_wrong">Белгісіз қате!</string>
     <string name="status2">Статус</string>
     <string name="profile1">Профиль</string>
-    <string name="settings1">Жөндеулер</string>
+    <string name="settings1">Түс өзгерту</string>
     <string name="online">Желіде</string>
     <string name="offline2">Желіден тыс</string>
+    <string name="language">Тіл өзгерту</string>
+    <string name="chosse">Тілді таңдаңыз</string>
+    <string name="dark">Қараңғы</string>
+    <string name="light">Жарық</string>
+    <string name="select_theme">Түсті таңдаңыз</string>
+    <string name="defaultt">Әдепкі(сматрфонның түсіне сай)</string>
+    <string name="check_interne">Интернет желісін тексеріңіз</string>
+
 </resources>

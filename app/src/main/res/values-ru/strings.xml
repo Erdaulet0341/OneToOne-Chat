@@ -49,7 +49,14 @@
     <string name="somothing_wrong">Что-то не так!</string>
     <string name="status2">Статус</string>
     <string name="profile1">Профиль</string>
-    <string name="settings1">Настройки</string>
+    <string name="settings1">Тема</string>
     <string name="online">В сети</string>
     <string name="offline2">Не в сети</string>
+    <string name="language">Язык приложений</string>
+    <string name="chosse">Выберите язык</string>
+    <string name="dark">Темная</string>
+    <string name="light">Светлая</string>
+    <string name="select_theme">Выберите тему</string>
+    <string name="defaultt">По умолчанию</string>
+    <string name="check_interne">Проверьте подключение интернету</string>
 </resources>

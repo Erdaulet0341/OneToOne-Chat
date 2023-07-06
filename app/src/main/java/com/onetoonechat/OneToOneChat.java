@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 //import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -101,6 +103,9 @@ public class OneToOneChat extends AppCompatActivity {
         receiverRoom = uidReceiver + uidSender;
 
         progressBar.setVisibility(View.VISIBLE);
+
+        boolean isInternetAvailable = NetworkUtils.isNetworkAvailable(this);
+        checkInternet(isInternetAvailable);
         DatabaseReference databaseReference = firebaseDatabase.getReference().child("chats").child(senderRoom).child("messages");
         messagesAdapter = new MessagesAdapter(OneToOneChat.this, oneMessageArrayList);
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -169,6 +174,11 @@ public class OneToOneChat extends AppCompatActivity {
                                 }
                             });
 
+                    String token = "ck9V8nV6TuaTLYnCfSPmO1:APA91bG5B_OjDtuHRD_7AWP6JnHFVWZ-55TzBRTYHNqTENnEBUll87gx0ZI9Q3ILzpBwxbUULvlVYn296vHpMbyX9uq_IiXffcSF-wv-yqAmqcNe183Wuijjs43DvulyHmrh1F830sa_";
+                    BackendNotification backendNotification = new BackendNotification(nameReceiver, enteredMessage,token);
+                    backendNotification.execute();
+                    Log.d("taggg", token);
+
                     message.setText(null);
                 }
             }
@@ -199,6 +209,13 @@ public class OneToOneChat extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         UserStatusManager.getInstance().updateUserStatus("Offline");
+    }
+
+    private void checkInternet(boolean isInternetAvailable) {
+        if(!isInternetAvailable)  {
+            Toast.makeText(this, getString(R.string.check_interne), Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.INVISIBLE);
+        }
     }
 
 }
