@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class BackendNotification extends AsyncTask<Void, Void, Void> {
-    private static final String SERVER_KEY = "AAAAps1ynsk:APA91bFswy1E0D4aGSNiiJSQWtPlBjeKyRSB6MUYjN_iueKQbsTDSbwcoxNpt_32EM2akrOZ9hlUk6XwtHarNH7ocfNpr0DNYEUuvJ4AS41Mj0H8dM1sAA3z13jQbhO1ADVxPaU8uIl_";
+    private static final String SERVER_KEY = "<your_server_key>";
     private static final String TARGET_URL = "https://fcm.googleapis.com/fcm/send";
 
     String title;
