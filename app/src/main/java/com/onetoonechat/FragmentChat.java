@@ -55,7 +55,7 @@ public class FragmentChat extends Fragment {
                 Picasso.get().load(uri).into(imgUser);
                 if(model.getStatus().equals("Online")){
                     holder.status.setText(getString(R.string.online));
-                    int color = ContextCompat.getColor(getContext(), R.color.tab_text_color);
+                    int color = ContextCompat.getColor(getContext(), R.color.online_off);
                     holder.status.setTextColor(color);
                 }
                 else{
@@ -71,6 +71,7 @@ public class FragmentChat extends Fragment {
                         intent.putExtra("username", model.getName());
                         intent.putExtra("useruid", model.getUid());
                         intent.putExtra("imageUser", model.getImage());
+                        intent.putExtra("token_notification", model.getToken_notification());
                         startActivity(intent);
 
                     }

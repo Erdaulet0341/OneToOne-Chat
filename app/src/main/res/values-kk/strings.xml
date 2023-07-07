@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">OneToOne Chat</string>
-    <string name="chat_app_will_send_opt_to_your_entered_number">Енгізілген нөмірге код жіберілді</string>
+    <string name="chat_app_will_send_opt_to_your_entered_number">Енгізілген нөмірге код жіберіледі</string>
     <string name="enter_your_phone_number_here">Мұнда телефон нөміріңізді енгізіңіз</string>
     <string name="sent_opt">Кодты жіберу</string>
     <string name="enter_the_otp_you_received">Сіз алған кодты енгізіңіз</string>

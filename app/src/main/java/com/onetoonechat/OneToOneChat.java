@@ -42,7 +42,7 @@ public class OneToOneChat extends AppCompatActivity {
     ImageButton back;
     ProgressBar progressBar;
 
-    private String enteredMessage;
+    private String enteredMessage, token_notification;
     Intent intent;
     String nameSender, uidSender, nameReceiver, uidReceiver;
     private FirebaseAuth firebaseAuth;
@@ -97,6 +97,7 @@ public class OneToOneChat extends AppCompatActivity {
         simpleDateFormat = new SimpleDateFormat("hh:mm a");
 
         uidSender = firebaseAuth.getUid();
+        token_notification = getIntent().getStringExtra("token_notification");
         uidReceiver = getIntent().getStringExtra("useruid");
         nameReceiver = getIntent().getStringExtra("username");
         senderRoom = uidSender + uidReceiver;
@@ -174,10 +175,10 @@ public class OneToOneChat extends AppCompatActivity {
                                 }
                             });
 
-                    String token = "ck9V8nV6TuaTLYnCfSPmO1:APA91bG5B_OjDtuHRD_7AWP6JnHFVWZ-55TzBRTYHNqTENnEBUll87gx0ZI9Q3ILzpBwxbUULvlVYn296vHpMbyX9uq_IiXffcSF-wv-yqAmqcNe183Wuijjs43DvulyHmrh1F830sa_";
-                    BackendNotification backendNotification = new BackendNotification(nameReceiver, enteredMessage,token);
+//                    String token = "ck9V8nV6TuaTLYnCfSPmO1:APA91bG5B_OjDtuHRD_7AWP6JnHFVWZ-55TzBRTYHNqTENnEBUll87gx0ZI9Q3ILzpBwxbUULvlVYn296vHpMbyX9uq_IiXffcSF-wv-yqAmqcNe183Wuijjs43DvulyHmrh1F830sa_";
+                    BackendNotification backendNotification = new BackendNotification(nameReceiver, enteredMessage,token_notification);
                     backendNotification.execute();
-                    Log.d("taggg", token);
+//                    Log.d("taggg", token_notification);
 
                     message.setText(null);
                 }

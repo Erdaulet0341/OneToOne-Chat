@@ -5,15 +5,25 @@ public class FirebaseModel {
     String image;
     String uid;
     String status;
+    String token_notification;
 
     public FirebaseModel() {
     }
 
-    public FirebaseModel(String name, String image, String uid, String status) {
+    public FirebaseModel(String name, String image, String uid, String status, String token_notification) {
         this.name = name;
         this.image = image;
         this.uid = uid;
         this.status = status;
+        this.token_notification = token_notification;
+    }
+
+    public String getToken_notification() {
+        return token_notification;
+    }
+
+    public void setToken_notification(String token_notification) {
+        this.token_notification = token_notification;
     }
 
     public String getName() {

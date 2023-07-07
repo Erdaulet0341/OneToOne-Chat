@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.auth.FirebaseAuth;
@@ -51,6 +53,7 @@ public class SetProfile extends AppCompatActivity {
     private FirebaseStorage firebaseStorage;
     private  StorageReference storageReference;
     private FirebaseDatabase firebaseDatabase;
+    private static String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,16 @@ public class SetProfile extends AppCompatActivity {
         storageReference = firebaseStorage.getReference();
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        return;
+                    }
+
+                    // Get the token
+                    token = task.getResult();
+                });
 
         imgUserImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +162,7 @@ public class SetProfile extends AppCompatActivity {
         userData.put("image", imageAccessToken);
         userData.put("uid", firebaseAuth.getUid());
         userData.put("status", "Online");
+        userData.put("token_notification", token);
 
         reference.set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

@@ -16,5 +16,6 @@
     <color name="chat_line">#A6A6A6</color>
     <color name="chat_bg">#2A2D31</color>
     <color name="sender">#075e54</color>
+    <color name="online_off">#29C7AC</color>
     <color name="link_color">#61A1EA</color>
 </resources>
