@@ -7,4 +7,6 @@ This app is completely written using [Firebase](https://firebase.google.com/docs
 
 
 Worked realtime notification by using [FCM](https://firebase.google.com/docs/cloud-messaging/android/client). I save in database fcm token of users and when user send message to another user by using token I send post to fcm resp api.
+
+
 [Push notification.webm](https://github.com/Erdaulet0341/OneToOne-Chat/assets/98634106/2b2f4d94-c65f-4afb-b9f0-28118eacf70e)
