@@ -13,3 +13,5 @@ Worked realtime notification by using [FCM](https://firebase.google.com/docs/clo
 [Push notification.webm](https://github.com/Erdaulet0341/OneToOne-Chat/assets/98634106/2b2f4d94-c65f-4afb-b9f0-28118eacf70e)
 
 
+##Have dark and light theme
+![Theme](https://github.com/Erdaulet0341/OneToOne-Chat/assets/98634106/7e551419-14e3-4ac1-b99d-c0337fbe1832)
