@@ -1,7 +1,7 @@
 ## OneToOne-Chat (clone of WhatsApp part)
 
 
-This app is completely written using [Firebase](https://firebase.google.com/docs/android/setup). For storage users used [Firebase Cloud Firestore](https://firebase.google.com/docs/firestore/quickstart), for chat [Firebase Realtime Database](https://firebase.google.com/docs/database) and for images [Firebase Cloud Storage](https://firebase.google.com/docs/storage/android/start), for images [Picasso](https://github.com/square/picasso).
+This app is completely written using [Firebase](https://firebase.google.com/docs/android/setup). For storage users used [Firebase Cloud Firestore](https://firebase.google.com/docs/firestore/quickstart), for chat [Firebase Realtime Database](https://firebase.google.com/docs/database) and for images [Firebase Cloud Storage](https://firebase.google.com/docs/storage/android/start), for images [Picasso](https://github.com/square/picasso). Images are compressed using Bitmap liblary to jpeg format and 1/4 size.
 
 [Realtime chat.webm](https://github.com/Erdaulet0341/OneToOne-Chat/assets/98634106/cf9a809e-7c21-454a-b80c-80b065f2ca43)
 
