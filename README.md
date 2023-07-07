@@ -1,4 +1,4 @@
-## OneToOne-Chat (clone of WhatsApp part)
+## OneToOne-Chat (clone of WhatsApp(part))
 
 
 This app is completely written using [Firebase](https://firebase.google.com/docs/android/setup). For storage users used [Firebase Cloud Firestore](https://firebase.google.com/docs/firestore/quickstart), for chat [Firebase Realtime Database](https://firebase.google.com/docs/database) and for images [Firebase Cloud Storage](https://firebase.google.com/docs/storage/android/start). For registration and autorization used [Firebase Autentification](https://firebase.google.com/docs/auth/android/start) by phone number and getting coutry codes used [Country Code Picker Library](https://github.com/hbb20/CountryCodePickerProject). UI is written in xml. Responsive design worked any size of phones perfectly. For loading images used  [Picasso](https://github.com/square/picasso). Images are compressed using Bitmap liblary to jpeg format and 1/4 size.
